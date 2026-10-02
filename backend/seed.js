@@ -6,13 +6,13 @@ const Admin = require("./models/Admin");
 (async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI);
-    const email = "admin@college.com";
+    const email = "raunakkchy@gmail.com";
     const existing = await Admin.findOne({ email });
     if (!existing) {
       await Admin.create({
         name: "College Admin",
         email,
-        password: await bcrypt.hash("admin123", 10),
+        password: await bcrypt.hash("Raunak@777", 10),
         role: "admin"
       });
       console.log("Default admin created");
